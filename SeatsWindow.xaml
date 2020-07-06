@@ -1,0 +1,30 @@
+﻿<Window x:Class="ProjektMAS.SeatsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektMAS"
+        mc:Ignorable="d"
+        Title="SeatsWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="AUTO"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Name="SeatsDataGrid" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Seat row" Width="*" Binding="{Binding SeatRow}"/>
+                <DataGridTextColumn Header="Seat number" Width="*" Binding="{Binding SeatNumber}"/>
+                <DataGridTextColumn Header="Is seat free" Width="*" Binding="{Binding IsSeatFree}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="1" Grid.Column="1" Margin="40 15" Click="Reserve_Seat_Button_Click">Reserve seat</Button>
+
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="ProjektMAS.ScreeningWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektMAS"
+        mc:Ignorable="d"
+        Title="ScreeningView" Height="450" Width="800"
+        Closing="Window_Closing">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="AUTO"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Name="ScreeningsDataGrid" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Cinema hall name" Width="*" Binding="{Binding CinemaHallName}"/>
+                <DataGridTextColumn Header="Date of projection" Width="*" Binding="{Binding DateOfProjection}"/>
+                <DataGridTextColumn Header="Movie" Width="*" Binding="{Binding Movie.Title}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="2" Grid.Column="3" Margin="40 15" Click="Show_Seats_Button_Click">Show Seats</Button>
+
+    </Grid>
+</Window>
